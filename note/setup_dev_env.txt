@@ -1,0 +1,38 @@
+■ python仮想環境の作成
+$ conda create -n py374_django python=3.7.4
+
+# 有効化
+$ activate py374_django
+
+■ Djangoインストール
+requirement.txt を作成
+以下追記
+django~=2.2.4
+$ pip install -r requirement.txt
+
+■ プロジェクトの作成
+django-admin.exe startproject test_home_page .
+
+
+https://tutorial.djangogirls.org/ja/django_start_project/
+に従って、settings.pyを変更する
+
+
+■VisualStudioCodeのデバッグ設定
+{
+    "name": "Python: Django",
+    "type": "python",
+    "request": "launch",
+    "program": "${workspaceFolder}\\manage.py",
+    "args": [
+        "runserver",
+        "--noreload",
+        // "--nothreading"
+    ],
+    "django": true,
+    "justMyCode": false
+},
+
+
+■　アプリケーションの作成
+$ python manage.py startapp blog
